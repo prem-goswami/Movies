@@ -4,8 +4,7 @@ import Search from "./components/search";
 import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import CardComponent from "./components/cradComponent";
-import { use } from "react";
-import { updateSearchCount } from "./appWrite";
+import { useDebounce } from "react-use";
 
 const APP_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -19,20 +18,25 @@ const API_OPTIONS = {
 };
 
 const App = () => {
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
   const [moviesList, setMoviesList] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
+
+  // Fetch movies when the component mounts or when searchTerm changes
   useEffect(() => {
-    fetchMovies(searchTerm);
-  }, [searchTerm]);
+    fetchMovies(debouncedSearchTerm);
+  }, [debouncedSearchTerm]);
 
   const fetchMovies = async (query = "") => {
     setLoading(true);
     setErrorMessage(null);
     try {
       const endpoint = searchTerm
-        ? `${APP_BASE_URL}/search/movie?query=${searchTerm}`
+        ? `${APP_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
         : `${APP_BASE_URL}/discover/movie?sort_by=popularity.desc`;
       const response = await fetch(endpoint, API_OPTIONS);
       if (!response.ok) {
@@ -46,8 +50,6 @@ const App = () => {
         return;
       }
       setMoviesList(data.results || []);
-
-      updateSearchCount();
     } catch (error) {
       console.log(`Error fetching movies: ${error}`);
       setErrorMessage("Failed to fetch movies. Please try again later.");
