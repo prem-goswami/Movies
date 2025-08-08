@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainBackground {
+  background-image: url("../public/BG.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  padding: 20px;
+  color: white;
+}
+.wrapper header span {
+  background: linear-gradient(to right, #d667ff, #ab8bff), transparent;
+  background-clip: text; /* fallback for some browsers */
+  color: transparent;
+}
+.wrapper .allMoviesText {
+  text-align: center;
+}
+.headerContent {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+/* allMovies */
+.moviesList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  /* header */
+  .wrapper {
+    width: 100vw;
+    background-size: auto;
+  }
+
+  .headerContent img {
+    width: 50%;
+    height: 50%;
+  }
+  .headerContent h1 {
+    font-size: 20px;
+  }
+  .wrapper h1 {
+    font-size: 20px;
+  }
+}
