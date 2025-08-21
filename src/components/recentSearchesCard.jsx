@@ -1,15 +1,13 @@
-
 import React from "react";
-import "./cardComponent.css";
+import "./recentSearchesCard.css";
 import { Link } from "react-router-dom";
 
-
-const CardComponent = ({ movie }) => {
+const RecentSearchCard = ({ movie }) => {
   const { id, title, vote_average, release_date, original_language, poster_path } = movie;
   return (
-    <Link to={`/movie/${id}`} className="moviesCardLink">
-      <div className="moviesCard">
-        <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} />
+    <Link to={`/movie/${id}`} className="recentMoviesCardLink">
+      <div className="recentMoviesCard">
+        <img src={`https://image.tmdb.org/t/p/w200/${poster_path}`} />
         <div className="title">
           <h3>{title}</h3>
         </div>
@@ -28,5 +26,4 @@ const CardComponent = ({ movie }) => {
   );
 };
 
-export default CardComponent;
-//
+export default RecentSearchCard;

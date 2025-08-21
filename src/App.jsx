@@ -1,6 +1,7 @@
 import "./App.css";
 import "./index.css";
 import Search from "./components/search";
+import RecentSearches from "./components/recentSearches";
 import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import CardComponent from "./components/cradComponent";
@@ -68,6 +69,7 @@ const App = () => {
           </h1>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
+        <RecentSearches />
         <h1 className="allMoviesText">All Movies</h1>
         <section className="allMovies">
           {loading ? (

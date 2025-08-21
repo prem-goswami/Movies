@@ -1,3 +1,14 @@
+.moviesCardLink {
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s;
+}
+
+.moviesCardLink:hover .moviesCard {
+  box-shadow: 0 8px 32px rgba(214, 103, 255, 0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
 .moviesCard {
   padding: 30px;
   background-color: #0f0d23;

@@ -1,0 +1,30 @@
+/* Recent Searches Section */
+.recentMoviesSection {
+  margin: 0 auto 24px auto;
+  padding: 12px 0 6px 0;
+  background: rgba(24, 18, 43, 0.7);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(214, 103, 255, 0.08);
+  min-width: 300px;
+  max-width: 98vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recentMoviesTitle {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #d667ff;
+}
+.recentMoviesList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

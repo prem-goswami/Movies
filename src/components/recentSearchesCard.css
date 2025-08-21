@@ -1,0 +1,45 @@
+.recentMoviesCardLink {
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s;
+}
+
+.recentMoviesCardLink:hover .recentMoviesCard {
+  box-shadow: 0 4px 16px rgba(214, 103, 255, 0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.recentMoviesCard {
+  padding: 5px;
+  background-color: #18122b;
+  border-radius: 8px;
+  margin: 8px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 120px;
+  object-fit: contain;
+}
+
+.recentMoviesCard img {
+  height: 150px;
+  border-radius: 4px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+.recentMoviesCard .title h3 {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  margin: 0 0 4px 0;
+}
+.recentMoviesCard .rating img {
+  height: 14px;
+  width: 14px;
+}
+.recentMoviesCard .rating p {
+  display: inline;
+  font-size: 10px;
+  color: white;
+  margin: 0 2px;
+}
