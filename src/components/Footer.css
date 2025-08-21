@@ -1,0 +1,13 @@
+.custom-footer {
+  width: 100vw;
+  text-align: center;
+  padding: 18px 0;
+  background: rgba(24, 18, 43, 0.85);
+  color: #d667ff;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  position: static;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
