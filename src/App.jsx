@@ -63,7 +63,7 @@ const App = () => {
     <main className="mainBackground">
       <div className="wrapper">
         <header className="headerContent">
-          <img src="./public/hero-img.png" alt="Hero Image" />
+          <img src="/hero-img.png" alt="Hero Image" />
           <h1>
             Find <span>Movies</span> you enjoy !
           </h1>

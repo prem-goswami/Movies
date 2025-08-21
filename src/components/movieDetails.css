@@ -7,23 +7,13 @@ body {
 .movie-details-bg {
   min-height: 100vh;
   width: 100vw;
-  background-image: url("../public/BG.png");
+  background-image: url("/BG.png");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-.movie-details-bg {
-  min-height: 100vh;
-  width: 100vw;
-  background-image: url("../public/BG.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .movie-details-container {
