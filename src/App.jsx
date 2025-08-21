@@ -7,6 +7,7 @@ import { ClipLoader } from "react-spinners";
 import CardComponent from "./components/cradComponent";
 import { useDebounce } from "react-use";
 import Footer from "./components/Footer";
+import ProjectAlert from "./components/ProjectAlert";
 
 const APP_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -62,6 +63,7 @@ const App = () => {
 
   return (
     <main className="mainBackground">
+      <ProjectAlert />
       <div className="wrapper">
         <header className="headerContent">
           <img src="/hero-img.png" alt="Hero Image" />

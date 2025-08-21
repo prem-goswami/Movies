@@ -1,0 +1,77 @@
+.project-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #18122b 80%, #d667ff 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-alert-box {
+  background: rgba(35, 32, 58, 0.98);
+  color: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(214, 103, 255, 0.18);
+  padding: 32px 28px 24px 28px;
+  max-width: 520px;
+  width: 96vw;
+  text-align: center;
+  border: 2px solid #d667ff;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-alert-box h2 {
+  color: #d667ff;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.project-alert-box ul {
+  margin: 18px 0 0 0;
+  padding-left: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.project-alert-box li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding-left: 18px;
+  position: relative;
+  list-style: none;
+}
+.project-alert-box li:before {
+  content: "• ";
+  color: #d667ff;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.project-alert-btn {
+  background: linear-gradient(90deg, #d667ff 60%, #ab8bff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 32px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  margin-top: 18px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(214, 103, 255, 0.12);
+  transition: background 0.2s, transform 0.2s;
+}
+.project-alert-btn:hover {
+  background: linear-gradient(90deg, #ab8bff 60%, #d667ff 100%);
+  transform: scale(1.05);
+}
