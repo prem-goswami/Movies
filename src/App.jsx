@@ -26,6 +26,9 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [moviesList, setMoviesList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(() => {
+    return sessionStorage.getItem("projectAlertDismissed") !== "true";
+  });
 
   useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
 
@@ -61,9 +64,14 @@ const App = () => {
     }
   };
 
+  const handleAlertClose = () => {
+    setShowAlert(false);
+    sessionStorage.setItem("projectAlertDismissed", "true");
+  };
+
   return (
     <main className="mainBackground">
-      <ProjectAlert />
+      <ProjectAlert visible={showAlert} onClose={handleAlertClose} />
       <div className="wrapper">
         <header className="headerContent">
           <img src="/hero-img.png" alt="Hero Image" />

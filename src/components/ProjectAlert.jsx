@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ProjectAlert.css";
 
-const ProjectAlert = () => {
-  const [visible, setVisible] = useState(true);
+const ProjectAlert = ({ visible, onClose }) => {
   if (!visible) return null;
   return (
     <div className="project-alert-overlay">
@@ -16,7 +15,7 @@ const ProjectAlert = () => {
           }}
         >
           <span style={{ fontSize: "2.5rem", marginBottom: "2px" }}>🎬</span>
-          <h2>Movies Discovery Website – Built with React + Vite</h2>
+          <h2>Movies Discovery Website - Built with React + Vite</h2>
         </div>
         <p style={{ margin: "10px 0 0 0", fontWeight: 500 }}>
           This project is a full-featured movies discovery platform designed to
@@ -47,13 +46,18 @@ const ProjectAlert = () => {
           </li>
           <li>
             <strong>User Experience Enhancements:</strong> Smooth transitions
-            and hover effects
+            and hover effects.
           </li>
         </ul>
-        <button className="project-alert-btn" onClick={() => setVisible(false)}>
-          Continue
+        <button
+          className="project-alert-btn"
+          onClick={onClose}
+          style={{ marginTop: "16px" }}
+        >
+          Close
         </button>
       </div>
+      // ...existing code...
     </div>
   );
 };
